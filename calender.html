@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    #MyClockDisplay {
+      font-size: 40px;
+      font-family: Arial, sans-serif;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="MyClockDisplay"></div>
+
+  <script>
+    function showDate() {
+      const date = new Date();
+
+      let day = date.getDate();       
+      let month = date.getMonth() + 1; 
+      let year = date.getFullYear();   
+
+      
+      day = day < 10 ? "0" + day : day;
+      month = month < 10 ? "0" + month : month;
+
+      let output = day + "-" + month + "-" + year;
+
+      document.getElementById("MyClockDisplay").innerHTML = output;
+
+      
+      setTimeout(showDate, 1000);
+    }
+
+    showDate();
+  </script>
+</body>
+</html>
